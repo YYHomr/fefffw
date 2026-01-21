@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>404 — Page Not Found</title>
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: Arial, sans-serif;
+      background: #ffffff;
+      color: #0d1117;
+    }
+    .container {
+      text-align: center;
+    }
+    .code {
+      font-size: 220px;
+      font-weight: bold;
+      line-height: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 20px;
+    }
+    .code img {
+      height: 240px;
+      display: block;
+      transform-origin: center;
+      will-change: transform;
+      cursor: pointer;
+    }
+    /* spin animation: one super fast 360deg rotation */
+    @keyframes spin360 {
+      from { transform: rotate(0deg); }
+      to   { transform: rotate(360deg); }
+    }
+    .spin {
+      animation: spin360 0.2s linear 1;
+    }
+    p {
+      margin: 30px 0 0;
+      color: #555;
+      font-size: 22px;
+    }
+
+    /* Dark theme support */
+    @media (prefers-color-scheme: dark) {
+      body {
+        background: #0d1117;
+        color: #f0f6fc;
+      }
+      p {
+        color: #aaa;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="code">
+      <div>4</div>
+      <img id="zeroImg" src="https://image2url.com/images/1758734881075-c8a527e9-c681-4a79-856b-36f2e26f523b.png" alt="0" />
+      <div>4</div>
+    </div>
+    <p>You Lost, but you found me.</p>
+  </div>
+
+  <script>
+    (function(){
+      const img = document.getElementById('zeroImg');
+      const targetUrl = 'https://vo-ai.netlify.app/';
+
+      // On each click: play one faster 360° spin, then open the URL in a new tab once animation ends.
+      img.addEventListener('click', (e) => {
+        img.classList.remove('spin');
+        void img.offsetWidth;
+        img.classList.add('spin');
+
+        const onEnd = () => {
+          window.open(targetUrl, '_blank');
+        };
+
+        img.addEventListener('animationend', onEnd, { once: true });
+      });
+    })();
+  </script>
+</body>
+</html>

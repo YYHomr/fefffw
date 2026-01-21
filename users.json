@@ -1,0 +1,26 @@
+[
+  {
+    "firstName": "yazan",
+    "email": "yazanhomran1d1@gmail.com",
+    "password": "$2b$10$UUqRspmzwZ.E4UABna2/6evAa8qsEj7bVm9DgxAXiC8WSJoq7GYoG",
+    "plan": "pro"
+  },
+  {
+    "firstName": "yazan",
+    "email": "yazanhomran111@gmail.com",
+    "password": "$2b$10$A/SXf28/qi6hvan6bge8pOLtzk3Z7NKDhpbihal5ppifvmtj86M6W",
+    "plan": "pro"
+  },
+  {
+    "firstName": "yq",
+    "email": "yazanhomran120@gmail.com",
+    "password": "$2b$10$VeOzV9kepsEpwShnuyOR3et9LQVJCOXcbu0.cur9CWLC3anReUYAa",
+    "plan": "Pro"
+  },
+  {
+    "firstName": "yazan1",
+    "email": "voai.sup@gmail.com",
+    "password": "$2b$10$.66zIUgCIJsCoc0lLH6mX.YjF/ZWXOyoK/kbzGrbd4ZENLBqWhoda",
+    "plan": "pro"
+  }
+]

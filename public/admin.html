@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <title>Admin - VOAI News</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet" />
+    <style>
+        :root {
+            /* Matching PRO.html Palette */
+            --primary-50: #f8f9fa;
+            --primary-100: #f1f3f4;
+            --gray-900: #202124;
+            --accent-primary: #000000;
+            --accent-primary-hover: #333333;
+            --bg-color: #fafafa;
+            --card-bg: #ffffff;
+            --text-color: #202124;
+            --text-secondary: #5f6368;
+            --input-bg: #f1f3f4;
+            --input-border: transparent;
+            --danger: #d93025;
+            --font-family: 'Inter', sans-serif;
+        }
+
+        body.dark {
+            --bg-color: #1a1a1a;
+            --card-bg: #2d2d2d;
+            --text-color: #e8eaed;
+            --text-secondary: #9aa0a6;
+            --accent-primary: #ffffff;
+            --accent-primary-hover: #e0e0e0;
+            --input-bg: #3a3a3a;
+            --input-border: #4a4a4a;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: var(--font-family);
+            background: var(--bg-color);
+            color: var(--text-color);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            transition: background 0.3s ease, color 0.3s ease;
+        }
+
+        .header {
+            padding: 20px 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: var(--card-bg);
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+        }
+
+        .header-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+        }
+
+        .header-nav a {
+            text-decoration: none;
+            color: var(--text-secondary);
+            margin-left: 20px;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+
+        .header-nav a:hover {
+            color: var(--text-color);
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 40px auto;
+            padding: 0 20px;
+            width: 100%;
+            flex: 1;
+        }
+
+        .card {
+            background: var(--card-bg);
+            border-radius: 12px;
+            padding: 30px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+            margin-bottom: 30px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+
+        .form-input,
+        .form-textarea {
+            width: 100%;
+            padding: 12px;
+            border-radius: 8px;
+            border: 1px solid var(--input-border);
+            background: var(--input-bg);
+            color: var(--text-color);
+            font-family: inherit;
+            font-size: 1rem;
+            outline: none;
+            transition: box-shadow 0.2s;
+        }
+
+        .form-input:focus,
+        .form-textarea:focus {
+            box-shadow: 0 0 0 2px var(--accent-primary);
+        }
+
+        .form-textarea {
+            min-height: 120px;
+            resize: vertical;
+        }
+
+        .btn {
+            background: var(--accent-primary);
+            color: var(--card-bg);
+            /* usually white or dark gray depending on theme */
+            padding: 12px 24px;
+            border: none;
+            border-radius: 8px;
+            font-weight: 600;
+            cursor: pointer;
+            font-size: 1rem;
+            transition: opacity 0.2s, transform 0.1s;
+        }
+
+        body.dark .btn {
+            color: #000;
+            /* text on white button in dark mode */
+        }
+
+        .btn:hover {
+            opacity: 0.9;
+        }
+
+        .btn:active {
+            transform: scale(0.98);
+        }
+
+        .news-list {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .news-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px;
+            background: var(--bg-color);
+            border-radius: 8px;
+        }
+
+        .news-info {
+            flex: 1;
+        }
+
+        .news-item-title {
+            font-weight: 600;
+            margin-bottom: 4px;
+        }
+
+        .news-item-date {
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+        }
+
+        .btn-delete {
+            background: transparent;
+            color: var(--danger);
+            padding: 8px 12px;
+            font-size: 0.9rem;
+        }
+
+        .btn-delete:hover {
+            background: rgba(217, 48, 37, 0.1);
+        }
+
+        /* Login Overlay */
+        #login-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: var(--bg-color);
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+        }
+
+        .hidden {
+            display: none !important;
+        }
+
+        .login-box {
+            background: var(--card-bg);
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 400px;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Login Overlay -->
+    <div id="login-overlay">
+        <div class="login-box">
+            <h2 style="margin-bottom: 20px;">Admin Login</h2>
+            <p style="margin-bottom: 20px; color: var(--text-secondary);">Please enter your password to continue.</p>
+            <form id="login-form">
+                <div class="form-group">
+                    <input type="password" class="form-input" id="admin-password" placeholder="Password" required />
+                </div>
+                <button type="submit" class="btn" style="width: 100%;">Login</button>
+            </form>
+        </div>
+    </div>
+
+    <div class="header">
+        <div class="header-title">News Admin</div>
+        <div class="header-nav">
+            <a href="/discover.html" target="_blank">View Live Page</a>
+            <a href="/PRO.html">Back to Chat</a>
+            <a href="#" onclick="logout()">Logout</a>
+        </div>
+    </div>
+
+    <div class="container" id="admin-content">
+
+        <div class="card">
+            <h2 style="margin-bottom: 20px;">Upload News</h2>
+            <form id="news-form">
+                <div class="form-group">
+                    <label class="form-label">Title</label>
+                    <input type="text" class="form-input" id="title" required placeholder="Enter headline..." />
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label">Image URL</label>
+                    <input type="text" class="form-input" id="image" placeholder="https://example.com/image.jpg" />
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label">Content</label>
+                    <textarea class="form-textarea" id="content" required
+                        placeholder="Enter news content..."></textarea>
+                </div>
+
+                <button type="submit" class="btn">Publish News</button>
+            </form>
+        </div>
+
+        <div class="card">
+            <h2 style="margin-bottom: 20px;">Manage News</h2>
+            <div id="news-list" class="news-list">
+                <!-- items here -->
+            </div>
+        </div>
+
+    </div>
+
+    <script>
+        if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+            document.body.classList.add('dark');
+        }
+
+        const loginOverlay = document.getElementById('login-overlay');
+        const loginForm = document.getElementById('login-form');
+        const newsForm = document.getElementById('news-form');
+        const list = document.getElementById('news-list');
+        let adminAuth = localStorage.getItem('admin_password') || '';
+
+        // Check auth on load
+        if (adminAuth) {
+            verifyPassword(adminAuth);
+        }
+
+        async function verifyPassword(pwd) {
+            try {
+                const res = await fetch('/api/auth/verify-admin', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ password: pwd })
+                });
+                const data = await res.json();
+
+                if (data.ok) {
+                    adminAuth = pwd;
+                    localStorage.setItem('admin_password', pwd);
+                    loginOverlay.classList.add('hidden');
+                    loadNews();
+                } else {
+                    // If stored password is wrong, clear it and show login
+                    localStorage.removeItem('admin_password');
+                    loginOverlay.classList.remove('hidden');
+                    if (pwd === document.getElementById('admin-password').value) {
+                        alert('Incorrect password');
+                    }
+                }
+            } catch (err) {
+                console.error(err);
+                if (err instanceof SyntaxError) {
+                    alert('Server error (404). YOU MUST RESTART THE SERVER for changes to take effect.');
+                } else {
+                    alert('Connection error. Is the server running?');
+                }
+            }
+        }
+
+        loginForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            const pwd = document.getElementById('admin-password').value;
+            verifyPassword(pwd);
+        });
+
+        function logout() {
+            localStorage.removeItem('admin_password');
+            location.reload();
+        }
+
+        async function loadNews() {
+            const res = await fetch('/api/news');
+            const news = await res.json();
+            renderList(news);
+        }
+
+        function renderList(news) {
+            if (!news || news.length === 0) {
+                list.innerHTML = '<div style="color:var(--text-secondary); text-align:center;">No news items.</div>';
+                return;
+            }
+            list.innerHTML = news.map(item => `
+        <div class="news-item">
+          <div class="news-info">
+            <div class="news-item-title">${item.title}</div>
+            <div class="news-item-date">${new Date(item.date).toLocaleDateString()}</div>
+          </div>
+          <button class="btn btn-delete" onclick="deleteNews('${item.id}')">Delete</button>
+        </div>
+      `).join('');
+        }
+
+        async function deleteNews(id) {
+            if (!confirm('Are you sure?')) return;
+            const res = await fetch('/api/news/' + id, {
+                method: 'DELETE',
+                headers: { 'x-admin-password': adminAuth }
+            });
+            if (res.ok) {
+                loadNews();
+            } else {
+                alert('Authentication failed. Please login again.');
+                logout();
+            }
+        }
+
+        newsForm.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const title = document.getElementById('title').value;
+            const image = document.getElementById('image').value;
+            const content = document.getElementById('content').value;
+
+            const res = await fetch('/api/news', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'x-admin-password': adminAuth
+                },
+                body: JSON.stringify({ title, image, content })
+            });
+
+            if (res.ok) {
+                newsForm.reset();
+                loadNews();
+                alert('News published!');
+            } else {
+                alert('Error publishing news. check password.');
+                logout();
+            }
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,383 @@
+{
+  "15": {
+    "id": "15",
+    "history": [
+      {
+        "role": "user",
+        "content": "what is the biggest country"
+      },
+      {
+        "role": "assistant",
+        "content": "something went wrong! try creating a new chat or refreshing the page."
+      },
+      {
+        "role": "user",
+        "content": "what is the biggest country"
+      },
+      {
+        "role": "assistant",
+        "content": "something went wrong! try creating a new chat or refreshing the page."
+      }
+    ],
+    "date": "2026-01-16T22:52:38.799Z"
+  },
+  "mkhfaxcuuj4bt1qtup": {
+    "id": "mkhfaxcuuj4bt1qtup",
+    "history": [
+      {
+        "role": "user",
+        "content": "what is Samsung newest phone"
+      },
+      {
+        "role": "assistant",
+        "content": "something went wrong! try creating a new chat or refreshing the page."
+      }
+    ],
+    "date": "2026-01-16T22:01:25.854Z"
+  },
+  "mkhfps80sr6bst44ryp": {
+    "id": "mkhfps80sr6bst44ryp",
+    "history": [
+      {
+        "role": "user",
+        "content": "make me a PRO pdf"
+      },
+      {
+        "role": "assistant",
+        "content": "Enable Agent Mode through the Connections button, then Agent Mode, and turn it on.  \n\nWhat kind of content or design would you like in your professional PDF?"
+      },
+      {
+        "role": "user",
+        "content": "a info about japan"
+      },
+      {
+        "role": "assistant",
+        "content": "Here’s your professional PDF about Japan: <http://localhost:9991/voai/download/1768562613722-806759584-Japan_Information.pdf>\n\nWould you like any additional sections or details added?"
+      },
+      {
+        "role": "user",
+        "content": "PRO"
+      },
+      {
+        "role": "assistant",
+        "content": "Here is your **professional PDF** about Japan:\n\n<a href=\"http://localhost:9991/voai/download/1768562637371-148423815-Japan_Information_Professional.pdf\">Download Japan_Information_Professional.pdf</a>\n\nWould you like any extra sections or a customized cover page?"
+      },
+      {
+        "role": "user",
+        "content": "colors"
+      },
+      {
+        "role": "assistant",
+        "content": "<a href=\"http://localhost:9991/voai/download/1768562657142-962992921-Japan_Professional_Overview.pdf\">Download Japan_Professional_Overview.pdf</a>\n\nWould you like any additional pages or a specific cover design?"
+      },
+      {
+        "role": "user",
+        "content": "More info"
+      },
+      {
+        "role": "assistant",
+        "content": "<a href=\"http://localhost:9991/voai/download/1768562685213-234077085-Japan_Professional_Overview_Expanded.pdf\">Download Japan_Professional_Overview_Expanded.pdf</a>\n\nWould you like any additional graphics, charts, or a custom cover page added?"
+      },
+      {
+        "role": "user",
+        "content": "more info"
+      },
+      {
+        "role": "assistant",
+        "content": "something went wrong! try creating a new chat or refreshing the page."
+      }
+    ],
+    "date": "2026-01-16T22:12:59.040Z"
+  },
+  "mkhgnc7pe6zn7e1ww9v": {
+    "id": "mkhgnc7pe6zn7e1ww9v",
+    "history": [
+      {
+        "role": "user",
+        "content": "what is the biggest country"
+      },
+      {
+        "role": "assistant",
+        "content": "something went wrong! try creating a new chat or refreshing the page."
+      }
+    ],
+    "date": "2026-01-16T22:39:04.597Z"
+  },
+  "mkhgzpo8jac6dgcd2k": {
+    "id": "mkhgzpo8jac6dgcd2k",
+    "history": [
+      {
+        "role": "user",
+        "content": "what is Samsung newest phone"
+      },
+      {
+        "role": "assistant",
+        "content": "something went wrong! try creating a new chat or refreshing the page."
+      }
+    ],
+    "date": "2026-01-16T22:48:41.912Z"
+  },
+  "mkhjn90hmm6zy1foqvi": {
+    "id": "mkhjn90hmm6zy1foqvi",
+    "history": [
+      {
+        "role": "user",
+        "content": "/Gmail create and send a hello email to voai.agent@gmail.com"
+      },
+      {
+        "role": "assistant",
+        "content": "something went wrong! try creating a new chat or refreshing the page."
+      }
+    ],
+    "date": "2026-01-17T00:02:59.297Z",
+    "lastUpdated": "2026-01-17T00:03:01.424Z"
+  },
+  "mkhjnlmceltr1zx6owb": {
+    "id": "mkhjnlmceltr1zx6owb",
+    "history": [
+      {
+        "role": "user",
+        "content": "/Gmail create and send a hello email to voai.agent@gmail.com"
+      },
+      {
+        "role": "assistant",
+        "content": "Enable Agent Mode through the Connections button, then Agent Mode, and turn it on. Would you like help with anything else?"
+      },
+      {
+        "role": "user",
+        "content": "/Gmail create and send a hello email to voai.agent@gmail.com"
+      },
+      {
+        "role": "assistant",
+        "content": "Enable Agent Mode through the Connections button, then Agent Mode, and turn it on. Need anything else?"
+      }
+    ],
+    "date": "2026-01-17T00:03:15.636Z",
+    "lastUpdated": "2026-01-17T00:03:30.094Z"
+  },
+  "mkhjtd07dqbuaz3l9a6": {
+    "id": "mkhjtd07dqbuaz3l9a6",
+    "history": [
+      {
+        "role": "user",
+        "content": "/Gmail create and send a hello email to voai.agent@gmail.com"
+      },
+      {
+        "role": "assistant",
+        "content": "<h2>Send a “Hello” email with Python</h2>\n\n<p>Use the script below. Replace <code>YOUR_EMAIL</code> and <code>YOUR_APP_PASSWORD</code> with your Gmail address and an app‑password (or OAuth token).</p>\n\n```python\nimport smtplib\nfrom email.message import EmailMessage\n\n# Email credentials\nSMTP_SERVER = \"smtp.gmail.com\"\nSMTP_PORT = 587\nSENDER = \"YOUR_EMAIL@gmail.com\"\nPASSWORD = \"YOUR_APP_PASSWORD\"\n\n# Message details\nmsg = EmailMessage()\nmsg[\"From\"] = SENDER\nmsg[\"To\"] = \"voai.agent@gmail.com\"\nmsg[\"Subject\"] = \"Hello\"\nmsg.set_content(\"Hello\")\n\ndef send_email():\n    with smtplib.SMTP(SMTP_SERVER, SMTP_PORT) as server:\n        server.starttls()\n        server.login(SENDER, PASSWORD)\n        server.send_message(msg)\n        print(\"Email sent successfully!\")\n\nif __name__ == \"__main__\":\n    send_email()\n```\n\n<p>Copy the code, fill in the placeholders, and run it with <code>python send_email.py</code>.</p>\n\n<p>Do you need help generating the app‑password or setting up the Gmail API? 🤔</p>"
+      }
+    ],
+    "date": "2026-01-17T00:07:44.407Z",
+    "lastUpdated": "2026-01-17T00:07:56.478Z"
+  },
+  "mkhk12kn80iue3qdr7k": {
+    "id": "mkhk12kn80iue3qdr7k",
+    "history": [
+      {
+        "role": "user",
+        "content": "/calender Read"
+      },
+      {
+        "role": "assistant",
+        "content": "Enable Agent Mode through the Connections button, then Agent Mode, and turn it on. What would you like to do next?"
+      }
+    ],
+    "date": "2026-01-17T00:13:44.135Z",
+    "lastUpdated": "2026-01-17T00:13:49.210Z"
+  },
+  "mkhk6jo87ujezk5zjld": {
+    "id": "mkhk6jo87ujezk5zjld",
+    "history": [
+      {
+        "role": "user",
+        "content": "make me a pdf about how AI nowadays are better then before and how this will change the world soon, How people can stay at home while AIs do their jobs, how most people will lost there job and be homeless, who will earn more using AI, And why should people learn using AI from today, make it PRO, add colors, and tables"
+      },
+      {
+        "role": "assistant",
+        "content": "Here is your professional PDF, complete with colors, tables, and a clear structure.  \nYou can download it using the link below:\n\n<a href=\"http://localhost:9991/voai/download/1768609076314-980264621-AI_Future_Impact.pdf\">AI_Future_Impact.pdf</a>\n\nWhat would you like to explore next?"
+      }
+    ],
+    "date": "2026-01-17T00:17:59.576Z"
+  },
+  "mkhk8lug9p70iwkrfr5": {
+    "id": "mkhk8lug9p70iwkrfr5",
+    "history": [
+      {
+        "role": "user",
+        "content": "make me a pdf about how AI nowadays are better then before and how this will change the world soon, How people can stay at home while AIs do their jobs, how most people will lost there job and be homeless, who will earn more using AI, And why should people learn using AI from today, make it PRO, add colors, and tables, and at less 50 words per point"
+      },
+      {
+        "role": "assistant",
+        "content": "Here is your professional PDF titled **“AI Evolution and Future Impact.”** It covers how modern AI outperforms earlier versions, the upcoming world‑changing effects, staying home while AI works, job displacement risks, who will earn more, and why learning AI now is essential. The document includes colored headings, a comparison table, and each point contains over 50 words.\n\nDownload the PDF here: https://localhost:9991/voai/download/1768609173872-60451240-AI_Evolution_and_Future_Impact.pdf  \n\nWhat would you like to explore next?"
+      },
+      {
+        "role": "user",
+        "content": "make an arabic virson"
+      },
+      {
+        "role": "assistant",
+        "content": "Here is the Arabic version of the PDF you requested: <a href=\"http://localhost:9991/voai/download/1768609211571-955533117-تطور_الذكاء_الاصطناعي_وتأثيره_المستقبلي.pdf\">تطور_الذكاء_الاصطناعي_وتأثيره_المستقبلي.pdf</a>\n\nWould you like any additional modifications or another language version?"
+      },
+      {
+        "role": "user",
+        "content": "اشرح ليش الناس رح تستمر باستخدام الذكاء الاصطناعي رغم خساره عملهم"
+      },
+      {
+        "role": "assistant",
+        "content": "<h2>لماذا سيستمر الناس في استخدام الذكاء الاصطناعي رغم فقدان وظائفهم؟</h2>\n\n<ul>\n  <li><strong>الكفاءة والإنتاجية</strong> – AI ينجز المهام أسرع وأدق، مما يقلل التكاليف ويزيد الربح.</li>\n  <li><strong>الراحة والمرونة</strong> – يتيح العمل من المنزل أو من أي مكان، ما يوفر وقتًا وجهدًا.</li>\n  <li><strong>التخصيص والابتكار</strong> – يوفر حلولًا مخصصة لكل شركة أو فرد، مما يفتح فرصًا جديدة.</li>\n  <li><strong>الاعتماد المتزايد</strong> – القطاعات الحيوية (صحة، تمويل، لوجستيات) تعتمد على AI لتحسين الخدمات.</li>\n  <li><strong>التحول الرقمي</strong> – الحكومات والشركات تشجع التحول الرقمي كأولوية استراتيجية.</li>\n  <li><strong>التعلم المستمر</strong> – الأفراد يتعلمون مهارات جديدة لتشغيل وإدارة AI، ما يخلق وظائف جديدة.</li>\n  <li><strong>التكلفة الأقل</strong> – استبدال العمالة البشرية بالتقنيات يقلل النفقات على المدى الطويل.</li>\n  <li><strong>التحكم والرقابة</strong> – AI يتيح مراقبة الأداء وتحسينه في الوقت الحقيقي.</li>\n</ul>\n\n<p>باختصار، الفوائد الاقتصادية والعملية تجعل AI أداة لا يمكن الاستغناء عنها، حتى وإن تغيرت طبيعة الوظائف.</p>\n\nهل ترغب في معرفة كيف يمكن اكتساب مهارات الذكاء الاصطناعي بسهولة؟"
+      },
+      {
+        "role": "user",
+        "content": "هل برايك الAI ممكن يتحول الى اداة مضره قريبا؟"
+      },
+      {
+        "role": "assistant",
+        "content": "<h2>هل يمكن أن يتحول الذكاء الاصطناعي إلى أداة مضرة قريبًا؟</h2>\n\n<p><strong>نعم، هناك مخاطر محتملة</strong> إذا لم تُدار التكنولوجيا بحذر. من بين أهم التحديات:</p>\n\n<ul>\n  <li><strong>التحكم غير المسؤول:</strong> أنظمة AI تُطوّر بدون قيود واضحة قد تُستغل لأغراض خبيثة مثل الاختراق أو التضليل.</li>\n  <li><strong>التحيّز والتمييز:</strong> إذا استُخدمت بيانات غير متوازنة، قد تُكرّر الأنظمة التحيّزات الاجتماعية وتفاقم الظلم.</li>\n  <li><strong>فقدان الوظائف بسرعة:</strong> تسريع الأتمتة قد يترك شريحة كبيرة من السكان بلا عمل إذا لم تُنشأ برامج إعادة تأهيل.</li>\n  <li><strong>الاعتماد المفرط:</strong> الاعتماد الكامل على AI في قرارات حساسة (مثل الرعاية الصحية أو القضاء) قد يسبب أخطاء لا يمكن تصحيحها بسهولة.</li>\n</ul>\n\n<p><strong>كيف يمكن تجنّب التحوّل إلى أداة مضرة؟</strong></p>\n\n<ol>\n  <li><strong>التنظيم والحوكمة:</strong> وضع أطر قانونية واضحة للشفافية والمسؤولية.</li>\n  <li><strong>التدقيق المستمر:</strong> مراجعة نماذج AI واختبارها ضد السيناريوهات الأخلاقية.</li> \n  <li><strong>التعليم والشمول:</strong> توعية المجتمع بقدرات وقيود AI وتدريب القوى العاملة على المهارات الجديدة.</li>\n  <li><strong>التعاون الدولي:</strong> مشاركة أفضل الممارسات بين الدول لتجنب السباق غير المسؤول لتطوير AI.</li>\n</ol>\n\n<p>بهذا الأسلوب، يمكننا الاستفادة من إمكانات AI القوية مع تقليل خطر تحولها إلى أداة مضرة.</p>\n\nهل ترغب بمعرفة أمثلة محددة على سياسات تنظيمية فعّالة للـ AI؟"
+      }
+    ],
+    "date": "2026-01-17T00:19:35.704Z",
+    "lastUpdated": "2026-01-17T00:24:35.909Z"
+  },
+  "mkhkguytyp36epk5lwr": {
+    "id": "mkhkguytyp36epk5lwr",
+    "history": [
+      {
+        "role": "user",
+        "content": "اعملي PDF فيه خطة كامله لمده شهر مفصله ودقيقهو لكيف ممكن اجيب اول 100 مستحدم للAI tool الخاصه فيني"
+      },
+      {
+        "role": "assistant",
+        "content": "<html>\n<body>\n<h2>خطة شهرية للحصول على أول 100 مستخدم لأداتك الذكية</h2>\n<p>تم إنشاء ملف PDF يحتوي على الخطة المفصّلة. يمكنك تحميله من الرابط التالي:</p>\n<p><a href=\"http://localhost:9991/voai/download/1768609558733-895643155-Plan_First_100_Users.pdf\">Plan_First_100_Users.pdf</a></p>\n<p>هل تحتاج إلى تعديل أي جزء من الخطة أو إضافة تفاصيل أخرى؟</p>\n</body>\n</html>"
+      },
+      {
+        "role": "user",
+        "content": "الوان وتنسيق + يومي وليس اسبوعي"
+      },
+      {
+        "role": "assistant",
+        "content": "<html>\n<body>\n<h2>خطة يومية مفصلة لجذب أول 100 مستخدم لأداتك الذكية</h2>\n<p>تم إنشاء ملف PDF يحتوي على الخطة اليومية مع تنسيقات ألوان جذابة.</p>\n<p>📥 <a href=\"http://localhost:9991/voai/download/1768609597310-993757001-Plan_First_100_Users_Daily.pdf\">Download Plan_First_100_Users_Daily.pdf</a></p>\n<p>هل تحتاج إلى إضافة تفاصيل أو تعديل أي جزء من الخطة؟</p>\n</body>\n</html>"
+      }
+    ],
+    "date": "2026-01-17T00:26:00.773Z",
+    "lastUpdated": "2026-01-17T00:26:39.281Z"
+  },
+  "mkhmi088tkcprl5i4": {
+    "id": "mkhmi088tkcprl5i4",
+    "history": [
+      {
+        "role": "user",
+        "content": "ZIP file uploaded: V-2.2.2 Agent Mode!.zip. ZIP ID: 1768613311515-157962801.zip"
+      },
+      {
+        "role": "user",
+        "content": "Extract the ZIP file with zipId \"1768613311515-157962801.zip\" and list all files inside it."
+      },
+      {
+        "role": "assistant",
+        "content": "something went wrong! try creating a new chat or refreshing the page."
+      }
+    ],
+    "date": "2026-01-17T01:22:53.480Z",
+    "lastUpdated": "2026-01-17T01:30:22.014Z"
+  },
+  "mkholjvxualkegv2sx": {
+    "id": "mkholjvxualkegv2sx",
+    "history": [
+      {
+        "role": "user",
+        "content": "hi"
+      },
+      {
+        "role": "assistant",
+        "content": "<h2>Hey there! 👋</h2>\n<p>I'm VO, your AI assistant from OurVendo AI.</p>\n<p>What can I help you with today?</p>"
+      }
+    ],
+    "date": "2026-01-17T02:21:38.157Z",
+    "lastUpdated": "2026-01-17T02:21:42.287Z"
+  },
+  "mkhq27veyebuwit4qa7": {
+    "id": "mkhq27veyebuwit4qa7",
+    "history": [
+      {
+        "role": "user",
+        "content": "make a professional PDF report about Jordan the country"
+      },
+      {
+        "role": "assistant",
+        "content": "something went wrong! try creating a new chat or refreshing the page."
+      }
+    ],
+    "date": "2026-01-17T03:02:35.354Z"
+  },
+  "mkhq2eveqjg434q737r": {
+    "id": "mkhq2eveqjg434q737r",
+    "history": [
+      {
+        "role": "user",
+        "content": "make a professional PDF report about Jordan the country"
+      },
+      {
+        "role": "assistant",
+        "content": "something went wrong! try creating a new chat or refreshing the page."
+      }
+    ],
+    "date": "2026-01-17T03:02:44.426Z"
+  },
+  "mkhq2nxfchlqyhgirq": {
+    "id": "mkhq2nxfchlqyhgirq",
+    "history": [
+      {
+        "role": "user",
+        "content": "make a professional PDF report about Jordan the country"
+      },
+      {
+        "role": "assistant",
+        "content": "something went wrong! try creating a new chat or refreshing the page."
+      }
+    ],
+    "date": "2026-01-17T03:02:56.163Z"
+  },
+  "mkihbqvyl5rghdpegu": {
+    "id": "mkihbqvyl5rghdpegu",
+    "history": [
+      {
+        "role": "user",
+        "content": "make a professional PDF report about Jordan the country"
+      },
+      {
+        "role": "assistant",
+        "content": "something went wrong! try creating a new chat or refreshing the page."
+      }
+    ],
+    "date": "2026-01-17T15:45:49.534Z"
+  },
+  "mkihcew9mwllcuvpy9": {
+    "id": "mkihcew9mwllcuvpy9",
+    "history": [
+      {
+        "role": "user",
+        "content": "make me a pro PDF about cats"
+      },
+      {
+        "role": "assistant",
+        "content": "Here’s a polished PDF that covers everything you need to know about cats.  \nYou can download it here:\n\n[http://localhost:9991/voai/download/1768664777399-125580452-Cats_Professional.pdf](http://localhost:9991/voai/download/1768664777399-125580452-Cats_Professional.pdf)\n\nWould you like any additional sections or a different format?"
+      }
+    ],
+    "date": "2026-01-17T15:46:20.649Z",
+    "lastUpdated": "2026-01-17T15:59:54.141Z"
+  },
+  "mkihu1g2alv9evdhh48": {
+    "id": "mkihu1g2alv9evdhh48",
+    "history": [
+      {
+        "role": "user",
+        "content": "make me a PDF about Cats, there types, how to take care of them, add colors, paragraphs, some tables, at least 500 words"
+      },
+      {
+        "role": "assistant",
+        "content": "Here’s your PDF about cats, their types, care tips, colorful details, and helpful tables: <https://localhost:9991/voai/download/1768665601235-788554465-Cats_Care.pdf>\n\nWould you like any additional sections or a different format?"
+      }
+    ],
+    "date": "2026-01-17T16:00:03.026Z"
+  }
+}

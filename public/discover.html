@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <title>Discover - VOAI News</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet" />
+    <style>
+        :root {
+            /* Matching PRO.html Palette */
+            --primary-50: #f8f9fa;
+            --primary-100: #f1f3f4;
+            --gray-900: #202124;
+            --accent-primary: #000000;
+            --accent-primary-hover: #333333;
+            --bg-color: #fafafa;
+            --card-bg: #ffffff;
+            --text-color: #202124;
+            --text-secondary: #5f6368;
+            --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.1);
+            --font-family: 'Inter', sans-serif;
+        }
+
+        body.dark {
+            --bg-color: #1a1a1a;
+            --card-bg: #2d2d2d;
+            --text-color: #e8eaed;
+            --text-secondary: #9aa0a6;
+            --accent-primary: #ffffff;
+            --accent-primary-hover: #e0e0e0;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: var(--font-family);
+            background: var(--bg-color);
+            color: var(--text-color);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            transition: background 0.3s ease, color 0.3s ease;
+        }
+
+        .header {
+            padding: 20px 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: var(--card-bg);
+            box-shadow: var(--shadow-sm);
+        }
+
+        .header-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+        }
+
+        .header-nav a {
+            text-decoration: none;
+            color: var(--text-secondary);
+            margin-left: 20px;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+
+        .header-nav a:hover {
+            color: var(--text-color);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 0 20px;
+            width: 100%;
+        }
+
+        .news-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .news-card {
+            background: var(--card-bg);
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+            transition: transform 0.2s, box-shadow 0.2s;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .news-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+        }
+
+        .news-image {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            background: var(--primary-100);
+        }
+
+        .news-content {
+            padding: 20px;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .news-date {
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            margin-bottom: 8px;
+        }
+
+        .news-title {
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin-bottom: 10px;
+            line-height: 1.4;
+        }
+
+        .news-excerpt {
+            font-size: 0.95rem;
+            color: var(--text-secondary);
+            line-height: 1.6;
+            flex: 1;
+        }
+
+        .loading {
+            text-align: center;
+            padding: 40px;
+            font-size: 1.2rem;
+            color: var(--text-secondary);
+        }
+
+        .empty-state {
+            text-align: center;
+            padding: 60px;
+            color: var(--text-secondary);
+            grid-column: 1 / -1;
+        }
+
+        /* Dark Mode Toggle (Optional or matches OS) */
+        @media (prefers-color-scheme: dark) {
+            /* handled by class, but defaults to dark if system */
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="header">
+        <div class="header-title">VOAI Discover</div>
+        <div class="header-nav">
+            <a href="/PRO.html">Back to Chat</a>
+            <!-- <a href="/admin.html">Admin</a> -->
+        </div>
+    </div>
+
+    <div class="container">
+        <h1 style="margin-bottom: 30px; font-weight: 700;">Latest AI News</h1>
+        <div id="news-grid" class="news-grid">
+            <div class="loading">Loading news...</div>
+        </div>
+    </div>
+
+    <script>
+        // Check for dark mode preference from localStorage or system to match PRO.html if possible
+        // For now simple detection
+        if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+            document.body.classList.add('dark');
+        }
+
+        async function fetchNews() {
+            try {
+                const res = await fetch('/api/news');
+                const news = await res.json();
+                renderNews(news);
+            } catch (err) {
+                document.getElementById('news-grid').innerHTML = '<div class="loading">Failed to load news.</div>';
+            }
+        }
+
+        function renderNews(news) {
+            const grid = document.getElementById('news-grid');
+            if (!news || news.length === 0) {
+                grid.innerHTML = '<div class="empty-state">No news available yet. Check back later!</div>';
+                return;
+            }
+
+            grid.innerHTML = news.map(item => `
+        <div class="news-card">
+          ${item.image ? `<img src="${item.image}" class="news-image" alt="${item.title}">` : ''}
+          <div class="news-content">
+            <div class="news-date">${new Date(item.date).toLocaleDateString()}</div>
+            <div class="news-title">${item.title}</div>
+            <div class="news-excerpt">${item.content}</div>
+          </div>
+        </div>
+      `).join('');
+        }
+
+        fetchNews();
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>VO Pricing</title>
+
+<style>
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Inter, sans-serif;
+  background: #0f0f12;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.container {
+  display: flex;
+  gap: 24px;
+  padding: 20px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.plan {
+  width: 260px;
+  padding: 22px;
+  border-radius: 18px;
+  text-align: center;
+  backdrop-filter: blur(18px) saturate(180%);
+  border: 1px solid rgba(255,255,255,0.18);
+  transition: 0.35s ease;
+}
+
+.plan.free {
+  background: rgba(255,255,255,0.08);
+}
+
+.plan.pro {
+  background: rgba(255,255,255,0.18);
+}
+
+.plan:hover {
+  transform: translateY(-4px);
+}
+
+.price {
+  font-size: 34px;
+  font-weight: 700;
+  margin: 18px 0;
+}
+
+.feature {
+  font-size: 14px;
+  padding: 5px 0;
+  opacity: 0.85;
+}
+
+.btn-free {
+  margin-top: 16px;
+  padding: 10px 18px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: 0.3s;
+  background: rgba(255,255,255,0.12);
+  color: #fff;
+  width:100%;
+}
+.btn-free:hover { background: rgba(255,255,255,0.18); }
+
+.back {
+  position: fixed;
+  top: 18px;
+  left: 18px;
+  padding: 8px 16px;
+  background: rgba(255,255,255,0.10);
+  border-radius: 8px;
+  cursor: pointer;
+  border: none;
+  color: #fff;
+  backdrop-filter: blur(10px);
+}
+.back:hover { background: rgba(255,255,255,0.18); }
+</style>
+</head>
+
+<body>
+
+<button class="back" onclick="window.location.href='/'">← Back</button>
+
+<div class="container">
+
+  <!-- FREE PLAN -->
+  <div class="plan free">
+    <h2>VO Free</h2>
+    <div class="price">$0</div>
+
+    <div class="feature">Limited File Uploading</div>
+    <div class="feature">One Model Only</div>
+    <div class="feature">Fast but Not Always Accurate</div>
+    <div class="feature">Chat History Saved</div>
+
+    <button class="btn-free" onclick="window.location.href='/free.html'">Continue Free</button>
+  </div>
+
+<!-- PRO PLAN -->
+<div class="plan pro" style="
+  position: relative;
+  border: 2px solid rgba(108, 0, 255, 0.55);
+  border-radius: 18px;
+">
+
+  <!-- Recommended Badge -->
+  <div style="
+    position:absolute;
+    top:-14px;
+    left:50%;
+    transform:translateX(-50%);
+    background:linear-gradient(90deg, #26005a, #2a176d);
+    padding:6px 16px;
+    font-size:13px;
+    font-weight:600;
+    border-radius:12px;
+    box-shadow:0 4px 14px rgba(0,0,0,0.3);
+  ">
+     Recommended Plan
+  </div>
+
+  <h2>VO Pro</h2>
+
+  <!-- Your new text instead of '1 free month' -->
+  <p style="
+    margin-top:4px;
+    font-size:15px;
+    opacity:0.85;
+    margin-bottom:10px;
+  ">Best for Power Users</p>
+
+  <div class="price">$1.99</div>
+
+  <div class="feature">✅ All Free Features Included</div>
+  <div class="feature">⚡ 2 Large AI Models</div>
+  <div class="feature">📁 Unlimited File Uploading & Generation</div>
+  <div class="feature">🖥️ PowerPoint Presentation Creation</div>
+  <div class="feature">🎯 Fast & Accurate Responses</div>
+  <div class="feature">🚀 First to Receive Updates</div>
+  <div class="feature">🔁 Cancel Anytime</div>
+
+  <!-- Visual Upgrade Button -->
+  <button id="vopro-pay-btn" style="
+    padding: 12px 26px;
+    border: none;
+    border-radius: 14px;
+    background: rgba(255,255,255,0.15);
+    backdrop-filter: blur(14px) saturate(180%);
+    color: #ffffff;
+    font-weight: 600;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.35s;
+    border: 1px solid rgba(255,255,255,0.25);
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    margin-top: 14px;
+  ">
+    Upgrade to VOPro 🚀
+    <span class="vopro-glow" style="
+      position:absolute;
+      top:-80%;
+      left:-80%;
+      width:250%;
+      height:250%;
+      background: radial-gradient(circle at center, rgba(255,255,255,0.45), transparent 60%);
+      opacity:0;
+      transition:0.45s;
+      pointer-events:none;
+    "></span>
+  </button>
+
+  <!-- Hidden PayPal Form -->
+  <form id="paypal-form" action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top" style="display:none">
+    <input type="hidden" name="cmd" value="_s-xclick" />
+    <input type="hidden" name="hosted_button_id" value="CL7MC2FTL9WHY" />
+    <input type="hidden" name="return" value="https://slimy-steaks-begin.loca.lt/">
+    <input type="hidden" name="notify_url" value="https://slimy-steaks-begin.loca.lt/api/paypal/ipn">
+    <input type="hidden" name="currency_code" value="USD" />
+  </form>
+
+</div>
+
+<script>
+  document.getElementById("vopro-pay-btn").addEventListener("click", () => {
+    document.getElementById("paypal-form").submit();
+  });
+</script>
+
+
+
+<script>
+// Glass hover effect
+const btn = document.getElementById("vopro-pay-btn");
+const glow = btn.querySelector(".vopro-glow");
+btn.onmousemove = (e)=>{
+  const r = btn.getBoundingClientRect();
+  glow.style.left = `${e.clientX - r.left - glow.offsetWidth/2}px`;
+  glow.style.top  = `${e.clientY - r.top  - glow.offsetHeight/2}px`;
+  glow.style.opacity = "0.55";
+};
+btn.onmouseleave = ()=>{ glow.style.opacity = "0"; };
+
+// Click -> Submit payment form
+btn.onclick = ()=>{
+  document.getElementById("paypal-form").submit();
+};
+</script>
+
+</body>
+</html>
